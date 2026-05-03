@@ -17,7 +17,7 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 - [x] Video searches
 - [x] Basic homepage results
 - [ ] Playlists support
-- [ ] Support next pages
+- [ ] Support next pages (currently only supports scraping the first page, need help with this)
 - [ ] Podcasts support
 - [ ] Sign plugin
 
