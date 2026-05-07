@@ -18,8 +18,8 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 - [x] Homepage results with pagination (infinite scroll)
 - [x] Support next pages
 - [x] Sign plugin
-- [ ] Playlists support
-- [ ] Podcasts support
+- [x] Playlists support
+- [x] Podcasts support
 
 
 ### Contributions
@@ -33,6 +33,6 @@ ssh-keygen -t rsa -b 2048 -m PEM -f ./private-key.pem
 # Encode it in Base64 and set the environment variable
 export SIGNING_PRIVATE_KEY="$(base64 -w 0 ./private-key.pem)"
 
-# Run the sign script:
-sh ./sign-script.sh "{SCRIPT_FILE_PATH}" "{CONFIG_FILE_PATH}"
+# Run the sign script (use git bash on Windows):
+sh ./sign-script.sh ./BibleProjectScript.js ./BibleProjectConfig.json
 ```

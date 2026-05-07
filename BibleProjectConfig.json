@@ -1,5 +1,5 @@
 {
-  "name": "BibleProject (Alpha)",
+  "name": "BibleProject",
   "platformUrl": "https://bibleproject.com/",
   "description": "BibleProject is a nonprofit, crowdfunded organization that makes free resources like videos, podcasts, articles, and classes to help people experience the Bible in a way that is approachable and transformative.",
   "author": "Freeb",
@@ -8,7 +8,7 @@
   "scriptUrl": "./BibleProjectScript.js",
   "repositoryUrl": "https://github.com/b-risk/Grayjay-BibleProject",
   "version": 1,
-  "iconUrl": "./BibleProjectIcon.png",
+  "iconUrl": "./Imgs/BibleProjectIcon.png",
   "id": "63bcd801-fa97-4cb0-87f8-07303e8444ad",
   "scriptSignature": "Z8jqbwl/ovkgDHnRIFf0DML/FveGXC5kvA5KFZ4Xzw6OJdYSwy/12mWJt9nHDhcINoDcL8leIFgteG5kBkZcsF+vfRATzTqaHbnJwqKJxk7UvYXubb+V4oKfNnLsOpJ3+QPgIIvernqhni3N9UHNmkfHdB6DkvoxrJMWfoXzDrqMyn8EH/c4s0OoMxeeJoyQGIP/iI5UnR3EcLuoIO0jGEcIVLjmHZK2pKhY5WtJiFIrLb1vIGAf700QfoYo797F6Soyf94N9BHB0eVUs1/7n3H7uWlcWusO4KAZZAwkopace41dwcaoePBGLrkpA8gcRbF7ZvU2JquQPOdH1tH0Ww==",
   "scriptPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqM1HUiz8KIidtnTX/Y5k\rjfLH/iU1Uudrfz8+n4H6uBdMAnmNB3BMhiVD7f/O8/daWKic6f2LErrlZfsQcJUn\rG0ltUzIeZZqBwu5GKkcshbtREgU4gL1/dTVSDjjBQ+olPFHoCk0cfLN1MlJ46kRS\rZRpL5dBFjTOCN8oGcDFjs+LRx59MNt7NdTBj3YJ+WWTNGIImxovqU+Df8bb6qWwf\rNfI6cy60AXsytknHQ9KVJzIsJIO0uM73ZNi9TMidFW0suP63qZ9W4aYtzFD+G9Cg\rH7xii6el5N65T8vv4JZMhEUqWI62jqukPCdgHnWxHE5N4FhVUfx/N6Lo0ps7Pxjz\rGwIDAQAB\r",
@@ -22,6 +22,7 @@
   "allowUrls": [
     ".bibleproject.com",
     ".mux.com",
-    ".github.com"
+    ".github.com",
+    ".imagekit.io"
   ]
 }
