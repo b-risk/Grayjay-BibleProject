@@ -17,9 +17,9 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 - [x] Video searches
 - [x] Homepage results with pagination (infinite scroll)
 - [x] Support next pages
-- [x] Sign plugin
 - [x] Playlists support
 - [x] Podcasts support
+- [ ] Sign plugin
 
 
 ### Contributions
