@@ -15,11 +15,11 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 - [x] Channel videos search
 - [x] Channel search
 - [x] Video searches
-- [x] Basic homepage results
+- [x] Homepage results with pagination (infinite scroll)
+- [x] Support next pages
+- [x] Sign plugin
 - [ ] Playlists support
-- [ ] Support next pages (currently only supports scraping the first page, need help with this)
 - [ ] Podcasts support
-- [ ] Sign plugin
 
 
 ### Contributions

@@ -13,6 +13,7 @@ const regexVariables = {
     video_title: /data-label="Full Video"\s+data-title="([^"]+)"\s+data-type-label="Video"/,
     video_description: /<div class="raw-html video-details-description"[^>]*>[\s\S]*?<p>([\s\S]*?)<\/p>[\s\S]*?<\/div>/,
     source_mp4: /<a\s+class="link unstyled-link rich-link"\s+href="([^"]+)"\s+rel="noreferrer"\s+target="_blank"\s+data-size="default"\s+data-label="Full Video"\s+data-title="[^"]*"\s+data-type-label="Video"\s+download="">/,
+    video_thumbnail: /<meta\s+property="og:image"\s+content="([^"]+)"/,
 };
 
 let config = {};
@@ -102,6 +103,7 @@ source.searchChannels = function (query) {
                 links: {}
             })], false);
     }
+    return new ChannelPager([], false);
 }
 
 source.isChannelUrl = function(url) {
@@ -153,12 +155,13 @@ source.getContentDetails = function(url) {
     const videoSource = extractDetail(videoResponse.body, regexVariables.source_mp4);
     const videoTitle = extractDetail(videoResponse.body, regexVariables.video_title) || 'Unknown';
     const videoDescription = extractDetail(videoResponse.body, regexVariables.video_description) || 'Unknown';
+    const videoThumbnail = extractDetail(videoResponse.body, regexVariables.video_thumbnail) || '';
 
     // Return the video details
     return new PlatformVideoDetails({
         id: new PlatformID(platform.title, videoTitle, config.id),
         name: videoTitle,
-        thumbnails: new Thumbnails([new Thumbnail('', 0)]),
+        thumbnails: new Thumbnails([new Thumbnail(videoThumbnail, 0)]),
         author: new PlatformAuthorLink(
             getPlatformID(),
             platform.title,
@@ -185,48 +188,116 @@ source.getContentDetails = function(url) {
     });
 }
 
+// Helper: Parse React Router data endpoint serialization format
+function parseReactRouterResponse(responseText) {
+    const root = JSON.parse(responseText);
+    
+    function resolve(val) {
+        if (Array.isArray(val)) {
+            return val.map(v => {
+                if (typeof v === 'number') {
+                    return resolve(root[v]);
+                }
+                return resolve(v);
+            });
+        }
+        if (val !== null && typeof val === 'object') {
+            const keys = Object.keys(val);
+            if (keys.length > 0 && keys.every(k => /^_\d+$/.test(k))) {
+                const obj = {};
+                for (const k of keys) {
+                    const actualKey = resolve(root[parseInt(k.slice(1))]);
+                    const actualValue = resolve(root[val[k]]);
+                    obj[actualKey] = actualValue;
+                }
+                return obj;
+            }
+            const obj = {};
+            for (const [k, v] of Object.entries(val)) {
+                obj[k] = resolve(v);
+            }
+            return obj;
+        }
+        return val;
+    }
+    
+    for (let i = 0; i < root.length; i++) {
+        const item = root[i];
+        if (item !== null && typeof item === 'object' && !Array.isArray(item)) {
+            const resolved = resolve(item);
+            if (resolved && typeof resolved === 'object' && 'videosRange' in resolved) {
+                return resolved;
+            }
+        }
+    }
+    return null;
+}
+
+// Helper: Map Grayjay sort order to BibleProject sort param
+function mapSortOrder(order) {
+    if (order === Type.Order.Chronological || order === '^release_time') {
+        return 'PUBLISHED_AT-DESC';
+    }
+    if (order === 'release_time') {
+        return 'PUBLISHED_AT-ASC';
+    }
+    if (order === '^name') {
+        return 'TITLE-DESC';
+    }
+    if (order === 'name') {
+        return 'TITLE-ASC';
+    }
+    return 'PUBLISHED_AT-DESC';
+}
+
 // Helper: Get all videos from BibleProject, returns a Pager
 function getAllVideosPager(url, type, order, filters, continuationToken, query) {
-    const allVideosResponse = http.GET(platform.url + 'videos/all/', {});
+    const sort = mapSortOrder(order);
+    let apiUrl = platform.regular_url + '/videos/all.data?';
+    const params = [];
+    
+    if (continuationToken) {
+        params.push('cursor=' + encodeURIComponent(continuationToken));
+    }
+    
+    params.push('sort=' + encodeURIComponent(sort));
+    params.push('_routes=' + encodeURIComponent('routes/videos/all/route'));
+    
+    apiUrl += params.join('&');
+    
+    const response = http.GET(apiUrl, {Accept: 'application/json'});
 
-    if (!allVideosResponse.isOk) {
-        throw new ScriptException(`Failed to retrieve the BibleProject channel [${allVideosResponse.code}]`);
+    if (!response.isOk) {
+        throw new ScriptException(`Failed to retrieve videos [${response.code}]`);
     };
 
-    const parse = domParser.parseFromString(allVideosResponse.body, 'text/html')
-    const elements = parse.getElementsByClassName("stack video-block")
+    const data = parseReactRouterResponse(response.body);
     
-    const extractedVideos = Array.from(elements).map(block => {
-        const thumbnailImg = block.querySelector('.video-block-artwork-image img');
-        const titleSpan = block.querySelector('.video-block-title .truncate');
-        const linkEl = block.querySelector('.video-block-title');
-        const durationEl = block.querySelector('.video-block-artwork-duration');
-
-        return {
-            title: titleSpan ? titleSpan.textContent.trim() : null,
-            thumbnail: thumbnailImg ? 
-                thumbnailImg.getAttribute('src')
-                    .replace(/tr:q-\d+/g, 'tr:q-65')   // Set quality to 65
-                    .replace(/,bl-\d+/g, '')            // Remove blur
-                    .replace(/tr:([^,]+)/, 'tr:$1')     // Clean up double tr:
-                : null,
-            url: linkEl ? platform.regular_url + linkEl.getAttribute('href') : null, // Format video URL if it exists
-            duration: durationEl ? durationToSeconds(durationEl.textContent.trim()) : null, // Convert duration to seconds
-            videoIndex: linkEl ? linkEl.getAttribute('data-video-index') : null
-        };
-    });   
+    if (!data || !data.videosRange) {
+        throw new ScriptException('Failed to parse video data from response');
+    }
+    
+    const videosRange = data.videosRange;
+    const rawVideos = videosRange.videos || [];
+    const hasMore = videosRange.hasMore || false;
+    const nextCursor = videosRange.cursor || null;
 
     const videos = [];
 
-    for (const video of Object.values(extractedVideos)) {
+    for (const video of rawVideos) {
         if (query && !video.title.toLowerCase().includes(query.toLowerCase())) {
             continue;
         }
 
-        videos.push(getPlatformVideo(video))
+        videos.push(getPlatformVideo({
+            title: video.title || null,
+            thumbnail: video.images && video.images.aspect16x9 ? video.images.aspect16x9 : null,
+            url: video.href ? platform.regular_url + video.href : null,
+            duration: video.durationSeconds || null
+        }));
     }
 
-    return new BibleProjectVideoPager(videos, false, {url, type, order, filters, continuationToken});
+    return new BibleProjectVideoPager(videos, hasMore, {url, type, order, filters, cursor: nextCursor, query});
 }
 
 // Helper: Get PlatformID
@@ -340,6 +411,13 @@ class BibleProjectVideoPager extends VideoPager {
 	}
 	
 	nextPage() {
-		return [];
+		return getAllVideosPager(
+			this.context.url,
+			this.context.type,
+			this.context.order,
+			this.context.filters,
+			this.context.cursor,
+			this.context.query
+		);
 	}
 }
