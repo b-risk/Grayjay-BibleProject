@@ -36,3 +36,6 @@ export SIGNING_PRIVATE_KEY="$(base64 -w 0 ./private-key.pem)"
 # Run the sign script (use git bash on Windows):
 sh ./sign-script.sh ./BibleProjectScript.js ./BibleProjectConfig.json
 ```
+
+### Transparency
+This was coded in part with the use of OpenCode.
