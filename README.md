@@ -12,6 +12,7 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 
 ### Features
 - [x] Video Playback
+- [x] Release dates for videos (video feeds are slightly slower due to needing to fetch them, podcasts are okay)
 - [x] Channel videos search
 - [x] Channel search
 - [x] Video searches
@@ -36,6 +37,3 @@ export SIGNING_PRIVATE_KEY="$(base64 -w 0 ./private-key.pem)"
 # Run the sign script (use git bash on Windows):
 sh ./sign-script.sh ./BibleProjectScript.js ./BibleProjectConfig.json
 ```
-
-### Transparency
-This was coded in part with the use of OpenCode.
