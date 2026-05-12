@@ -7,11 +7,11 @@
   "sourceUrl": "https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/refs/heads/main/BibleProjectConfig.json",
   "scriptUrl": "./BibleProjectScript.js",
   "repositoryUrl": "https://github.com/b-risk/Grayjay-BibleProject",
-  "version": 2,
+  "version": 3,
   "iconUrl": "./Imgs/BibleProjectIcon.png",
   "id": "63bcd801-fa97-4cb0-87f8-07303e8444ad",
-  "scriptSignature": "",
-  "scriptPublicKey": "",
+  "scriptSignature": "SmZ3nz4x+QH13BztOzLSSNWzvj0//sJCcKzZsTy8Ce64HOxyPjXln2q97RXhs0HgsxwDE5gYgj7HgDkcGMBFAYH2d1t6dz0ecGNtN1mOwE+p3z26S5YGvK8uSTXmP0/2+STD1uEaPjamxabV86X1lLFFhHxCyKU2iEA8h0HFdbr/BTWYgeJMoZdi5Tc/5iEMMLdhrzCzN4uSb3hDuAxAWO1y9+56UjF+pRJo76vk6bVrjeti6SmEf0oeZkMItCuFX7leCuoHY8KUHJ/Zlh6sL3XDvtQA1ZKE3qNkOEAN8r6Y4ZWPMqT8KOetcjeuo2pNQ9wNr54m6QtHknZusAYyuA==",
+  "scriptPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw1z2ZtXeXbLmgBuIIdxd4l2WerBCieD5q+YYqNBMBYeyf0NppaI7CmyOakrTnIafFceS+z42rwtqc3LFC3cNSlB70xkg7WgZrRdtr8asEyZDECRXFKvJzrkwL24UXN2zR4QWx4MskQB3RVovK20ZEhenwgC6/uEcYWE2ytJ2BBj0LIk4PlBHqo4eUnXrE2P2pPS4UzQI5VA6omKcLXZ+IkGCwsjxdmWBPlTG9EqnaSl5lWCBaLLsD4SBbfaaUOTBIdewVS1U5wNXNgn3i6O7rnfD32swvu3BrkkQ4dI4miEedkspX9M4MYlyxjyYLQ0KmGMQerkh3ulqozR0/lwm+wIDAQAB",
   "packages": [
     "Http",
     "Utilities",
@@ -29,6 +29,9 @@
     "2": [
       "Added the Top Videos category as the home feed",
       "Code efficiency improvements"
+    ],
+    "3": [
+      "Added script signature"
     ]
   }
 }
