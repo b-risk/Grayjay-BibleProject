@@ -20,7 +20,7 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 - [x] Support next pages
 - [x] Playlists support
 - [x] Podcasts support
-- [ ] Sign plugin
+- [x] Sign plugin
 
 
 ### Contributions
