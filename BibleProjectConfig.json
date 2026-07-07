@@ -32,6 +32,19 @@
     ],
     "3": [
       "Added script signature"
+    ],
+    "4": [
+      "Added classrooms support",
+      "Code efficiency improvements"
     ]
-  }
+  },
+  "settings": [
+    {
+      "variable": "useVideoFeedPublishedDate",
+      "name": "Use Publish Date in Video Feeds",
+      "description": "When enabled, in video feeds the plugin will grab the video published date by fetching each video page individually, this comes at the cost of speed the first time loaded.",
+      "type": "Boolean",
+      "default": "true"
+    }
+  ]
 }

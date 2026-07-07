@@ -1,5 +1,5 @@
 ### Grayjay BibleProject
-This plugin adds support for the platform BibleProject, allowing you to use it in Grayjay.
+This plugin adds support for videos, podcasts, and classrooms on the platform BibleProject, allowing you to use them in Grayjay.
 
 ### Installation
 You can install the plugin by scanning this QR code:  
@@ -20,8 +20,8 @@ grayjay://plugin/https://raw.githubusercontent.com/b-risk/Grayjay-BibleProject/r
 - [x] Support next pages
 - [x] Playlists support
 - [x] Podcasts support
+- [x] Classrooms support
 - [x] Sign plugin
-
 
 ### Contributions
 Contributions are welcome, feel free to submit pull requests if you think you can improve something or fix a bug.
