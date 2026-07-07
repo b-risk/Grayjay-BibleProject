@@ -10,8 +10,8 @@
   "version": 4,
   "iconUrl": "./Imgs/BibleProjectIcon.png",
   "id": "63bcd801-fa97-4cb0-87f8-07303e8444ad",
-  "scriptSignature": "csDUzQb9O3+AEAbuD2Z5rLiPH5FUY5tx+htDemcdrQWDOuCpFwbITJc6nMsyD2dw5PFSW+99FPp6eOfxrJDxqXzS0zOj8L58h+EgCepd692iUxa4Vs+Owr0cevdd/CWOq3OjlY4/SzJ4DOkzX8SsxkuufZ0QMzkbutDgSeBzh3i7KVBEz3BhyjWokcXUGxDKjocRaCF2+Z4xSarXiQLOBrGUZoZowL/A0tDtyBVkdAfclj7iNa+ShNPVGDc9uJA30JHt8IzPmwBbfvHejDzDnYxzHUtq+9WG9geUhq/QmGWKn/PNT3khClnk5n7zttH7yktok5+ADHabdt7zbA2Ktw==",
-  "scriptPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw1z2ZtXeXbLmgBuIIdxd4l2WerBCieD5q+YYqNBMBYeyf0NppaI7CmyOakrTnIafFceS+z42rwtqc3LFC3cNSlB70xkg7WgZrRdtr8asEyZDECRXFKvJzrkwL24UXN2zR4QWx4MskQB3RVovK20ZEhenwgC6/uEcYWE2ytJ2BBj0LIk4PlBHqo4eUnXrE2P2pPS4UzQI5VA6omKcLXZ+IkGCwsjxdmWBPlTG9EqnaSl5lWCBaLLsD4SBbfaaUOTBIdewVS1U5wNXNgn3i6O7rnfD32swvu3BrkkQ4dI4miEedkspX9M4MYlyxjyYLQ0KmGMQerkh3ulqozR0/lwm+wIDAQAB",
+  "scriptSignature": "ksf9ORztKY/IGYDfB3n2dFAexajZqxTHq1NmkuObAU/m6YHNl89FQ+YSZrK34yZgGeBlR4jyNBPHVnHlYH8/0uYx0fd/xWlMdIJYiLBExzpKLafk4dVKtnQ+029PB/c+obzCiORI6q7eUJnxMkatxPLWSmuyhxIF7ly6FZ2mPJdYo6b4+iZLwxUsw+xj8ObY+KZr/3t6ThOpUnIndNMlBQEZTwbgTZkCAUPok8qR7Pm+2jyDjOEHO9eVVWbX1YWZMYyBLE3OemZhHl7tPtTPGrqpte31NbPBXzNiLFrfTjdE33pLqsVBdwLXW3e1WQRhkkFCPg96AU6KlJ/cMoFzaw==",
+  "scriptPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4Yga1sFz+RoEIQ+efRQYhB7Xzj8CDvCvI6FTCRdi59AVtv3X+2mtG3z0OhED4nID8ECiLGm7NPUZ7ni0S+uNQz9Cn2wKqv3tHeDcRzqBldaz1PUHHnVwMoTnJaLNncSR5u/FUQXzCmGZ8NUMquAi+2ZPx0NXCJG4ZaaZwfceY98Ci0s+WbVrK4YNeVF0UM3Ow/dFZ3JGaqf09xloBFcErS7pOFlh509+ZdvcUel09jwqJBj+N3bDmakp+/5u2JbmVkwQ2Tx180/nMe2Q2znjke8YbnyIK/cMVw8eqDz3uDSxgb+gzJs0ptsJH8za22DuwR8kjaHsl/jUKLySR1Z7JQIDAQAB",
   "packages": [
     "Http",
     "Utilities",
