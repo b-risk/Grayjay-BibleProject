@@ -10,7 +10,7 @@
   "version": 4,
   "iconUrl": "./Imgs/BibleProjectIcon.png",
   "id": "63bcd801-fa97-4cb0-87f8-07303e8444ad",
-  "scriptSignature": "JrRsLgCESax+ZqDBqoPeM+Giim1oqOON+AcN0YkvKJbrGeoVBldOf+8onPrXXlABPdx2aJAdatPF2h9auwpaINpb/xTNY7jhQBy0WC22uhLmk1NETtkUqltWZf7id3LaGyxRTpyFlDIuZ39/gznLqmDj8IKqt4MGd27pXaK7HmvaHxVkRjudOJo2OhwBk3xVtfE0DqI7yWptYPiSc+CwUbRWuJ/MdwcSDxPK/c2AwHtP8lnQHLr4srpz7qXUzRbYidasCBlZzQ7jK+m0VQWj4/50s7/kpj6UF38+khNUyDYvkSkV1G7K6UJyUziX03tb+cYPVrigfrbnDLpN0FJbhA==",
+  "scriptSignature": "XEAUilY5UHq5KDAMLjuyLBQiyWeEXYltyNUDhtQTsDSA/6gcRTK8xckO53lyi6Y/czI1f7PexSL1XNPi//le+XQXRvuUDXHE3PmOl3jtmI7gDatAxwWAZwFelDguuG0/Fil1i6tzeJSHOJ9A6v7BAMm2JXLOIGAGmO7x46Ao7INDUBIF1XwLFi+Wp7xNFypXYCwCgO3I4wlETrpS63CMxHOciCS+FdVYmfVrSfzjB08oU9R+RCaoVYAkAlKRAZ8MzFzyQy11KzJY89RDu+ZE/s9O+ATATGVKmDigaUbzz0laP80dBZwPJ/ZMqFBPDG2hP2CZsQNx4/XN3+VfjD1AXw==",
   "scriptPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtiKPrXrH42Ok/M4O9KJ9tc/0md66/Cxe0HwLkpR8rLrfUKiyjiFEDWCFWIwSxBKh7ExOjeg6ICthl/KAmapGXEQHsp9KsgmdefE0DYaehlIS8wsNbNN1HJe1P84UATZV3OQDde9dk+bS98Z3m4vek8NlmxfzuUQ2SXONefghvJ/ReLb/u5uuyek74Y13qIX4bORrA6cNjIKgWlX1E2SLEifYBoYLtcwgfcopDeMlvLcESqXqG+av8d8qtDDLdrqcxdYMSUeELumx9zpOxM9qXqBuBz5XRYvgTWLL69YgcfnJOjDDgfIhO3+E6PRtdzej2zqnvQb1mgqjZvVJDF0ghwIDAQAB",
   "packages": [
     "Http",

@@ -1,4 +1,4 @@
-﻿// This plugin abides by Google's style guide for JavaScript.
+// This plugin abides by Google's style guide for JavaScript.
 
 // Platform information
 const platform = {
